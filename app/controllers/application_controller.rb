@@ -1,4 +1,9 @@
 class ApplicationController < ActionController::Base
+
+
+# To provide common set up or method to other controllers. Inherits from controller
+
+
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception

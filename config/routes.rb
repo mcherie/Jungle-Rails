@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+
+  # something like get '/blah', to: 'blah#index'
+
+  # I want the root to go to home index
   root to: 'products#index'
 
   resources :products, only: [:index, :show]
