@@ -18,6 +18,7 @@ class Admin::CategoriesController < ApplicationController
       render :new
     end
   end
+  
  def destroy
     @category = Category.find params[:id]
     @category.destroy
