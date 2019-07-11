@@ -10,6 +10,7 @@ class OrdersController < ApplicationController
 
     if order.valid?
       empty_cart!
+      UserMailer.order_confirmation(current_user, order).deliver_later
       redirect_to order, notice: 'Your Order has been placed.'
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
@@ -51,9 +52,15 @@ class OrdersController < ApplicationController
         item_price: product.price,
         total_price: product.price * quantity
       )
+    
+ 
+
     end
     order.save!
     order
   end
+
+
+  
 
 end
