@@ -133,4 +133,99 @@ cat3.products.create!({
 })
 
 
+## REVIEWS
+
+puts "Finding or Creating Reviews ..."
+
+user1 = User.find_or_create_by! ({first_name: 'John', last_name:'Doe', email: 'John@doe.com', password_digest: 'john'})
+
+Review.destroy_all
+
+
+Review.create!({
+  product_id: 12,
+  user_id: 1,
+  description: 'This bookshelf sort-of holds my books. Visually attractive though!',
+  rating: 3
+})
+
+Review.create!({
+  product_id: 11,
+  user_id: 1,
+  description: 'Electric chair, enough said!',
+  rating: 4
+})
+
+Review.create!({
+  product_id: 10,
+  user_id: 1,
+  description: 'This products is so amazing, I don\'t even know how to use it. Strongly recommend!',
+  rating: 5
+})
+
+Review.create!({
+  product_id: 9,
+  user_id: 1,
+  description: 'This products gives you free arm work-out as well',
+  rating: 4
+})
+
+Review.create!({
+  product_id: 8,
+  user_id: 1,
+  description: 'This hotdog slicer makes my hotdog tastes like bacon!',
+  rating: 3
+})
+
+Review.create!({
+  product_id: 7,
+  user_id: 1,
+  description: 'Meh.',
+  rating: 3
+})
+
+Review.create!({
+  product_id: 6,
+  user_id: 1,
+  description: 'I don\'t know how to feel about these shoes.',
+  rating: 3
+})
+
+Review.create!({
+  product_id: 5,
+  user_id: 1,
+  description: 'Whattup, James Bond?',
+  rating: 4
+})
+
+Review.create!({
+  product_id: 4,
+  user_id: 1,
+  description: 'These socks doesn\t warm my feet.',
+  rating: 1
+})
+
+Review.create!({
+  product_id: 3,
+  user_id: 1,
+  description: 'This hat has a hidden something, makes you a member of the Peaky Blinders!',
+  rating: 4
+})
+
+Review.create!({
+  product_id: 2,
+  user_id: 1,
+  description: 'This pants are pretty cool, they change color under the sun',
+  rating: 4
+})
+
+Review.create!({
+  product_id: 1,
+  user_id: 1,
+  description: 'This shirt makes me invincible like SuperMan, but way too heavy.',
+  rating: 2
+})
+
+
+
 puts "DONE!"

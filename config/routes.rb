@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   # I want the root to go to home index
   root to: 'products#index'
 
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show] do
+    resources :reviews, only: [:create]
+  end
   resources :categories, only: [:index, :show]
 
   resource :cart, only: [:show] do
