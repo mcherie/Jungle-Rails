@@ -1,0 +1,15 @@
+<dd>
+  <% if current_user && current_user.id == user.id %>
+
+
+
+  <%= link_to fa_icon('trash'), product_review_path(@product, review), class: 'btn btn-sm btn-danger', method: "delete", data: { confirm: "Are you sure?" } %>
+
+  <%end%>
+ 
+
+  <%= review.user.first_name %> <%= review.user.last_name %>:
+  <em>"<%= review.description %>"</em>
+  <%= review.rating %> Stars 
+  
+</dd> 
