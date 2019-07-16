@@ -1,0 +1,6 @@
+                                List of databases
+    Name     |  Owner  | Encoding |   Collate   |    Ctype    | Access privileges 
+-------------+---------+----------+-------------+-------------+-------------------
+ jungle_test | vagrant | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+(1 row)
+

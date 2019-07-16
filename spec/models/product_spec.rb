@@ -22,7 +22,6 @@ RSpec.describe Product, type: :model do
 
     it "is not valid without a name" do
         @category = Category.new
-        puts "-----------", @category  
         product = Product.new(
           name: nil,
           price: 1,
