@@ -109,8 +109,6 @@ RSpec.describe User, type: :model do
         )
         expect(user).not_to be_valid
     end
-
-
     
     it "is not valid with a duplicate non-case sensitive email" do
         user1 = User.create!(
