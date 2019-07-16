@@ -1,10 +1,12 @@
 require 'rails_helper'
 
-# Equivalent to the "describe" block -> "feature"
+# RSpec.feature "AddToCarts", type: :feature do
+#   pending "add some scenarios (or delete) #{__FILE__}"
+
 RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
 
-  # SETUP
-  before :each do
+
+ before :each do
     @category = Category.create! name: 'Apparel'
 
     10.times do |n|
@@ -18,20 +20,16 @@ RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
     end
   end
 
-
-  # Equivalent to the "it" block -> the "scenario"
-  scenario "They see all products" do
-    # ACT
+  scenario "Can add product/s to cart" do
+  
     visit root_path
 
-    # DEBUG / VERIFY
-    # save_screenshot
+    first('.btn-primary').click
 
-    
-    expect(page).to have_css 'article.product', count: 10
+    expect(page).to have_text'My Cart (1)'
+
+    save_screenshot "add_product_to_cart.png"
 
   end
 
 end
-
-
